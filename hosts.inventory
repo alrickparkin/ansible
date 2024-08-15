@@ -1,0 +1,12 @@
+[ubuntu]
+10.0.0.91
+
+[fedora]
+10.0.0.26
+
+[linux:children]
+ubuntu
+fedora
+
+[linux:vars]
+ansible_sudo_pass=365G00d$ever!

@@ -1,0 +1,15 @@
+
+---
+- hosts: fedora
+  become: yes
+  become_method: sudo
+
+  vars_files:
+    - /etc/vault.txt 
+#   - vars/linuxsecrets.yml  
+
+  tasks:
+  - name: Install PostgreSQL server
+    dnf:
+      name: postgresql  
+      state: present

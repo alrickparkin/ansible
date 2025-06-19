@@ -1,0 +1,13 @@
+---
+- hosts: linux
+  become: yes
+  become_method: sudo
+
+  vars_files:
+  - vars/linuxsecrets.yml
+
+  roles:
+  - shirou.cowsay  
+
+     
+

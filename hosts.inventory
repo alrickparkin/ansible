@@ -1,12 +1,27 @@
+[windows]
+10.0.0.169
+
+[windows:vars]
+#ansible_password='365G00d$ever!'
+ansible_connection=winrm
+ansible_winrm_port=5985
+ansible_winrm_transport=ntlm
+ansible_winrm_scheme=http
+ansible_winrm_kerberos_delegation=false
+
 [ubuntu]
-10.0.0.91
+10.0.0.69
 
 [fedora]
-10.0.0.26
+10.0.0.114
 
 [linux:children]
 ubuntu
 fedora
 
 [linux:vars]
-ansible_sudo_pass=365G00d$ever!
+ansible_sudo_pass='365G00d$ever!'
+#
+#If the IP address changes on any of the hosts
+#run command "rm .ssh/known_hosts", and use the ssh-copy-id to copy #the keys to 
+#the hosts again and also update this inventory file with the new IP# address

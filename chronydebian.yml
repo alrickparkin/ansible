@@ -2,16 +2,17 @@
 - hosts: ubuntu
   become: yes
   become_method: sudo
+  vars_files:
+    - /etc/vault.txt
 
   tasks:
-    - name: Ensure the chrony NTP daemon is installed
-      apt:
-        name: chrony
-        state: present
+  - name: Ensure the chrony NTP daemon is installed
+    apt:
+      name: chrony
+      state: present
 
-    - name: Ensure that the chrony NTP daemon is running
-      service:
-        name: chronyd
-        state: started
-        enabled: yes
-          
+  - name: Ensure that chrony NTP daemon is running
+    service:
+      name: chronyd
+      state: started
+      enabled: yes
